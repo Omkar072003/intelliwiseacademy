@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelliwise - Login</title>
+    <!-- Font Awesome Latest Version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <style>
+        /* CSS Custom Properties (same as your main page) */
+        :root {
+            --background-color: #1C2526;
+            --text-color: #FFFFFF;
+            --accent-color: #FFC107;
+            --secondary-text-color: #1C2526;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --header-footer-bg: rgba(28, 37, 38, 0.3);
+            --button-bg: #FFC107;
+            --button-text: #1C2526;
+            --button-border: 2px solid #FFC107;
+            --object-book-bg: #FFC107;
+            --object-star-bg: #FFFFFF;
+            --object-grad-cap-bg: #1C2526;
+            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #1C2526 50%);
+        }
+
+        body.light-mode {
+            --background-color: #2C466D;
+            --text-color: #FFFFFF;
+            --accent-color: #FFD700;
+            --secondary-text-color: #2C466D;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --header-footer-bg: rgba(255, 255, 255, 0.3);
+            --button-bg: #FFD700;
+            --button-text: #2C466D;
+            --button-border: 2px solid #FFD700;
+            --object-book-bg: #FFD700;
+            --object-star-bg: #FFFFFF;
+            --object-grad-cap-bg: #FFD700;
+            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #2C466D 50%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Background Objects (same as main page) */
+        .background-objects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            pointer-events: none;
+            perspective: 1500px;
+        }
+
+        .object {
+            position: absolute;
+            opacity: 0.7;
+            animation: float 12s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+            0% { transform: translate transform: translateY(0) translateX(0) translateZ(0) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1); }
+            50% { transform: translateY(-30px) translateX(30px) translateZ(50px) rotateY(180deg) rotateX(90deg) rotateZ(45deg) scale(1.2); }
+            100% { transform: translateY(0) translateX(0) translateZ(0) rotateY(360deg) rotateX(0deg) rotateZ(0deg) scale(1); }
+        }
+
+        .book { width: 50px; height: 35px; background: var(--object-book-bg); clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); }
+        .star { width: 25px; height: 25px; background: var(--object-star-bg); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5); }
+        .pencil { width: 12px; height: 60px; background: linear-gradient(to bottom, var(--object-book-bg) 70%, var(--text-color) 70%, var(--text-color) 85%, var(--background-color) 85%); clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); }
+        .grad-cap { width: 50px; height: 50px; background: var(--object-grad-cap-bg); position: relative; box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); }
+        .grad-cap::before { content: ''; position: absolute; top: -12px; left: 6px; width: 38px; height: 38px; background: var(--object-grad-cap-bg); transform: rotate(45deg); box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.5); }
+        .grad-cap::after { content: ''; position: absolute; top: -6px; left: 18px; width: 12px; height: 24px; background: var(--object-book-bg); clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); }
+        .globe { width: 35px; height: 35px; background: var(--object-globe-bg); border-radius: 50%; box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5); }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--header-footer-bg);
+            padding: 1rem 2rem;
+            width: 100%;
+            z-index: 10;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .logo {
+            height: 50px;
+            transition: height 0.3s ease;
+        }
+
+        .mode-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .mode-toggle:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        /* Login Container */
+        .login-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-card h2 {
+            color: var(--secondary-text-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            color: var(--secondary-text-color);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        input {
+            padding: 0.75rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--secondary-text-color);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--button-bg);
+        }
+
+        .login-btn {
+            background: var(--button-bg);
+            border: none;
+            padding: 0.75rem;
+            color: var(--button-text);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: scale(1.05);
+            background: var(--accent-color);
+        }
+
+        .login-links {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .login-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .login-links a:hover {
+            color: var(--button-bg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--header-footer-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 1.5rem;
+                max-width: 90%;
+            }
+            .logo { height: 40px; }
+            header { padding: 0.5rem 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .login-card h2 { font-size: 1.5rem; }
+            .login-btn { font-size: 1rem; }
+            .login-links a { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Objects -->
+    <div class="background-objects">
+        <div class="object book"></div>
+        <div class="object star"></div>
+        <div class="object pencil"></div>
+        <div class="object grad-cap"></div>
+        <div class="object globe"></div>
+        <div class="object book"></div>
+        <div class="object star"></div>
+        <div class="object pencil"></div>
+        <div class="object grad-cap"></div>
+        <div class="object globe"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <img src="https://via.placeholder.com/50x50?text=Logo" alt="Intelliwise Logo" class="logo">
+        <button class="mode-toggle" aria-label="Toggle Light/Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Login to Intelliwise</h2>
+            <form class="login-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="login-links">
+                <a href="#">Forgot Password?</a> | <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Intelliwise © 2025</p>
+    </footer>
+
+    <script>
+        // Distribute Background Objects
+        document.addEventListener('DOMContentLoaded', () => {
+            const objects = document.querySelectorAll('.object');
+            const container = document.querySelector('.background-objects');
+
+            const setContainerHeight = () => {
+                const docHeight = document.body.scrollHeight;
+                container.style.height = `${docHeight}px`;
+            };
+
+            setContainerHeight();
+            window.addEventListener('resize', setContainerHeight);
+
+            objects.forEach((object, index) => {
+                const left = Math.random() * 90 + 5;
+                const top = (index / (objects.length - 1)) * 100;
+                object.style.left = `${left}%`;
+                object.style.top = `${top}%`;
+                const delay = Math.random() * 5;
+                const duration = 8 + Math.random() * 4;
+                object.style.animationDelay = `${delay}s`;
+                object.style.animationDuration = `${duration}s`;
+            });
+
+            // Light/Dark Mode Toggle
+            const toggleButton = document.querySelector('.mode-toggle');
+            const toggleIcon = toggleButton.querySelector('i');
+            const body = document.body;
+
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'light') {
+                body.classList.add('light-mode');
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+            }
+
+            toggleButton.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                toggleIcon.style.opacity = '0';
+                setTimeout(() => {
+                    toggleIcon.classList.toggle('fa-moon', !isLightMode);
+                    toggleIcon.classList.toggle('fa-sun', isLightMode);
+                    toggleIcon.style.opacity = '1';
+                }, 300);
+                localStorage.setItem('mode', isLightMode ? 'light' : 'dark');
+            });
+        });
+    </script>
+</body>
+</html>

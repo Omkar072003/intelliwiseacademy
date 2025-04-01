@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-12 Education - Intelliwise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        :root {
+            /* Dark Mode (Default) - Matching the screenshot */
+            --body-bg: #1C2526;
+            --header-bg: rgba(28, 37, 38, 0.3);
+            --text-color: #FFFFFF;
+            --highlight-color: #FFC107;
+            --btn-bg: #FFC107;
+            --btn-hover-bg: #FFD700;
+            --section-bg: rgba(0, 0, 0, 0.5);
+            --subsection-bg: rgba(0, 0, 0, 0.3);
+            --transition: all 0.5s ease;
+            --toggle-track-bg: rgba(255, 255, 255, 0.2); /* Added for toggle */
+            --toggle-thumb-bg: #FFC107; /* Added for toggle */
+        }
+
+        [data-theme="light"] {
+            --body-bg: #2C466D;
+            --header-bg: rgba(255, 255, 255, 0.3);
+            --text-color: #FFFFFF;
+            --highlight-color: #FFD700;
+            --btn-bg: #FFD700;
+            --btn-hover-bg: #FFC107;
+            --section-bg: rgba(255, 255, 255, 0.2);
+            --subsection-bg: rgba(255, 255, 255, 0.1);
+            --toggle-track-bg: rgba(255, 255, 255, 0.3); /* Added for toggle */
+            --toggle-thumb-bg: #FFD700; /* Added for toggle */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            position: relative;
+            background: var(--body-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--highlight-color);
+            transform: scale(1.05);
+        }
+
+        /* New Toggle Switch (from index.html) */
+        .mode-toggle {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: var(--toggle-track-bg);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+
+        .mode-toggle input {
+            display: none;
+        }
+
+        .mode-toggle .slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: var(--toggle-thumb-bg);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #1C2526;
+        }
+
+        .mode-toggle input:checked + .slider {
+            transform: translateX(30px);
+        }
+
+        .mode-toggle .slider i {
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        .mode-toggle input:checked + .slider i {
+            transform: rotate(360deg);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: var(--highlight-color);
+            color: #1C2526;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--highlight-color);
+        }
+
+        .intro p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .section {
+            background: var(--section-bg);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            font-size: 28px;
+            color: var(--highlight-color);
+            margin-bottom: 15px;
+            animation: fadeIn 1s ease;
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .subsections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .subsection {
+            background: var(--subsection-bg);
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .subsection:hover {
+            transform: scale(1.05);
+        }
+
+        .subsection h3 {
+            font-size: 20px;
+            color: var(--highlight-color);
+            margin-bottom: 10px;
+        }
+
+        .subsection p {
+            font-size: 14px;
+        }
+
+        .btn {
+            position: relative;
+            padding: 10px 20px;
+            background: var(--btn-bg);
+            color: #1C2526;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.5s ease;
+            animation: bounceIn 1s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: var(--btn-hover-bg);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .intro h1 { font-size: 28px; }
+            .intro p { font-size: 16px; }
+            .section { max-width: 100%; }
+            .subsection { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video class="video-background" autoplay muted loop playsinline>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div class="logo">Intelliwise</div>
+        <label class="mode-toggle tooltip" aria-label="Toggle Dark Mode">
+            <input type="checkbox" id="mode-checkbox">
+            <span class="slider">
+                <i class="fas fa-moon"></i>
+            </span>
+            <span class="tooltip-text">Toggle Theme</span>
+        </label>
+    </header>
+
+    <section class="content">
+        <div class="intro">
+            <h1>K-12 Education</h1>
+            <p>Welcome to the K-12 Education section of Intelliwise. Explore a wide range of educational resources designed for students from Kindergarten through 12th grade. From fun learning games for young minds to advanced study tools for high schoolers, we've got it all!</p>
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+
+        <div class="sections">
+            <div class="section">
+                <h2>Maths</h2>
+                <p>Build a strong foundation in mathematics with engaging tools and techniques tailored for all ages.</p>
+                <div class="subsections">
+                    <div class="subsection">
+                        <h3>Vedic Math</h3>
+                        <p>Learn ancient Indian techniques for fast calculations and problem-solving, perfect for all grades.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Mental Math</h3>
+                        <p>Boost your brainpower with quick mental arithmetic tricks suitable for young learners and teens.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Abacus</h3>
+                        <p>Master the art of the abacus for visualizing numbers, great for KG kids and beyond.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Tips & Tricks</h3>
+                        <p>Discover shortcuts and strategies to ace math problems, from basic sums to algebra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Language</h2>
+                <p>Enhance your reading, writing, and speaking skills with fun stories, grammar games, and vocabulary builders for all levels.</p>
+            </div>
+
+            <div class="section">
+                <h2>Life Skills</h2>
+                <p>Develop essential skills for personal and professional growth through interactive activities designed for every age group.</p>
+                <div class="subsections">
+                    <div class="subsection">
+                        <h3>Entrepreneurship Skills</h3>
+                        <p>Learn to think creatively, take initiative, and develop business ideas, perfect for budding innovators.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Leadership Skills</h3>
+                        <p>Build confidence, decision-making, and team management abilities to lead effectively at any age.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Virtual Productivity Skills</h3>
+                        <p>Master digital tools, time management, and online collaboration for success in a virtual world.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Economic Skills</h3>
+                        <p>Understand money management, budgeting, and basic economics to make smart financial choices.</p>
+                    </div>
+                    <div class="subsection">
+                        <h3>Communication Skills</h3>
+                        <p>Enhance verbal, written, and interpersonal communication for better relationships and teamwork.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Theme Toggle
+        const toggleCheckbox = document.querySelector('#mode-checkbox');
+        const body = document.body;
+        const toggleIcon = document.querySelector('.mode-toggle .slider i');
+
+        // Function to update the toggle icon
+        function updateToggleIcon(isLightMode) {
+            if (isLightMode) {
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+            } else {
+                toggleIcon.classList.remove('fa-sun');
+                toggleIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Check saved mode on page load
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'light') {
+            body.setAttribute('data-theme', 'light');
+            toggleCheckbox.checked = true;
+            updateToggleIcon(true);
+        } else {
+            updateToggleIcon(false);
+        }
+
+        // Toggle theme and icon on change
+        toggleCheckbox.addEventListener('change', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('mode', 'dark');
+                updateToggleIcon(false);
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('mode', 'light');
+                updateToggleIcon(true);
+            }
+        });
+    </script>
+</body>
+</html>
