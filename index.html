@@ -10,60 +10,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <style>
-        :root {
-            /* Dark Mode (Default) */
-            --background-color: #1C2526;
-            --text-color: #FFFFFF;
-            --accent-color: #f9c100;
-            --secondary-text-color: #1C2526;
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --header-footer-bg: rgba(28, 37, 38, 0.3);
-            --button-bg: #f9c100;
-            --button-text: #1C2526;
-            --button-border: 2px solid #f9c100;
-            --progress-bg: #e0e0e0;
-            --object-book-bg: #f9c100;
-            --object-star-bg: #FFFFFF;
-            --object-grad-cap-bg: #1C2526;
-            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #1C2526 50%);
-            --toggle-track-bg: rgba(255, 255, 255, 0.2);
-            --toggle-thumb-bg: #f9c100;
-        }
+    :root {
+        /* Dark Mode (Default) */
+        --background-color: #000000; /* Pure black background */
+        --text-color: #FFFFFF; /* White text for contrast */
+        --accent-color: #FFD54F; /* Light yellow as accent */
+        --secondary-text-color: #FFFFFF; /* White secondary text */
+        --card-bg: rgba(255, 255, 255, 0.1); /* Slightly transparent white cards */
+        --header-footer-bg: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+        --button-bg: #FFD54F; /* Yellow buttons */
+        --button-text: #000000; /* Black button text for contrast */
+        --button-border: 2px solid #FFD54F;
+        --progress-bg: #FFFFFF; /* White progress background */
+        --object-book-bg: #FFD54F; /* Yellow book */
+        --object-star-bg: #FFFFFF; /* White stars */
+        --object-grad-cap-bg: #FFFFFF; /* White grad cap */
+        --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #000000 50%);
+        --toggle-track-bg: rgba(255, 255, 255, 0.2); /* Slightly visible track */
+        --toggle-thumb-bg: #FFD54F; /* Yellow toggle thumb */
+    }
 
-        body.light-mode {
-            --background-color: #2a456c;
-            --text-color: #FFFFFF;
-            --accent-color: #f9c100;
-            --secondary-text-color: #2a456c;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --header-footer-bg: rgba(255, 255, 255, 0.3);
-            --button-bg: #f9c100;
-            --button-text: #2a456c;
-            --button-border: 2px solid #f9c100;
-            --progress-bg: #5A7399;
-            --object-book-bg: #f9c100;
-            --object-star-bg: #FFFFFF;
-            --object-grad-cap-bg: #f9c100;
-            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #2a456c 50%);
-            --toggle-track-bg: rgba(255, 255, 255, 0.3);
-            --toggle-thumb-bg: #f9c100;
-        }
+    body.light-mode {
+        --background-color: #8E759E; /* Muted purple background */
+        --text-color: #FFD54F; /* Light yellow text */
+        --accent-color: #FFD54F; /* Yellow as accent */
+        --secondary-text-color: #FFD54F; /* Yellow secondary text */
+        --card-bg: rgba(255, 213, 79, 0.9); /* Semi-transparent yellow cards */
+        --header-footer-bg: #8E759E; /* Semi-transparent yellow */
+        --button-bg: #FFD54F; /* Yellow buttons */
+        --button-text: #8E759E; /* Purple button text */
+        --button-border: 2px solid #FFD54F;
+        --progress-bg: #FFD54F; /* Yellow progress background */
+        --object-book-bg: #FFD54F; /* Yellow book */
+        --object-star-bg: #FFFFFF; /* White stars */
+        --object-grad-cap-bg: #FFD54F; /* Yellow grad cap */
+        --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #8E759E 50%);
+        --toggle-track-bg: rgba(255, 213, 79, 0.3); /* Yellow toggle track */
+        --toggle-thumb-bg: #FFD54F; /* Yellow toggle thumb */
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+    /* Rest of your existing CSS remains unchanged */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            background: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-            transition: background 0.5s ease, color 0.5s ease;
-        }
+    body {
+        background: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        position: relative;
+        overflow-x: hidden;
+        transition: background 0.5s ease, color 0.5s ease;
+    }
 
         /* Overlay for Side Panel */
         .overlay {
@@ -761,7 +762,7 @@
             background: var(--progress-bg);
             height: 10px;
             border-radius: 5px;
-            margin: 0 ling: 0.5rem 0;
+            margin: 0 ling 0.5rem 0;
             overflow: hidden;
         }
 
