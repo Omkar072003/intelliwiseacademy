@@ -3,68 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelliwise - Learn & Succeed</title>
+    <title>IntelliWise Academy - Empowering Lifelong Learners</title>
     <!-- Font Awesome Latest Version -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <style>
-    :root {
-        /* Dark Mode (Default) */
-        --background-color: #000000; /* Pure black background */
-        --text-color: #FFFFFF; /* White text for contrast */
-        --accent-color: #FFD54F; /* Light yellow as accent */
-        --secondary-text-color: #FFFFFF; /* White secondary text */
-        --card-bg: rgba(255, 255, 255, 0.1); /* Slightly transparent white cards */
-        --header-footer-bg: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-        --button-bg: #FFD54F; /* Yellow buttons */
-        --button-text: #000000; /* Black button text for contrast */
-        --button-border: 2px solid #FFD54F;
-        --progress-bg: #FFFFFF; /* White progress background */
-        --object-book-bg: #FFD54F; /* Yellow book */
-        --object-star-bg: #FFFFFF; /* White stars */
-        --object-grad-cap-bg: #FFFFFF; /* White grad cap */
-        --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #000000 50%);
-        --toggle-track-bg: rgba(255, 255, 255, 0.2); /* Slightly visible track */
-        --toggle-thumb-bg: #FFD54F; /* Yellow toggle thumb */
-    }
+        :root {
+            /* Dark Mode (Default) */
+            --background-color: #1C2526;
+            --text-color: #FFFFFF;
+            --accent-color: #f9c100;
+            --secondary-text-color: #1C2526;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --header-footer-bg: rgba(28, 37, 38, 0.3);
+            --button-bg: #f9c100;
+            --button-text: #1C2526;
+            --button-border: 2px solid #f9c100;
+            --progress-bg: #e0e0e0;
+            --object-book-bg: #f9c100;
+            --object-star-bg: #FFFFFF;
+            --object-grad-cap-bg: #1C2526;
+            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #1C2526 50%);
+            --toggle-track-bg: rgba(255, 255, 255, 0.2);
+            --toggle-thumb-bg: #f9c100;
+        }
 
-    body.light-mode {
-        --background-color: #8E759E; /* Muted purple background */
-        --text-color: #FFD54F; /* Light yellow text */
-        --accent-color: #FFD54F; /* Yellow as accent */
-        --secondary-text-color: #FFD54F; /* Yellow secondary text */
-        --card-bg: rgba(255, 213, 79, 0.9); /* Semi-transparent yellow cards */
-        --header-footer-bg: #8E759E; /* Semi-transparent yellow */
-        --button-bg: #FFD54F; /* Yellow buttons */
-        --button-text: #8E759E; /* Purple button text */
-        --button-border: 2px solid #FFD54F;
-        --progress-bg: #FFD54F; /* Yellow progress background */
-        --object-book-bg: #FFD54F; /* Yellow book */
-        --object-star-bg: #FFFFFF; /* White stars */
-        --object-grad-cap-bg: #FFD54F; /* Yellow grad cap */
-        --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #8E759E 50%);
-        --toggle-track-bg: rgba(255, 213, 79, 0.3); /* Yellow toggle track */
-        --toggle-thumb-bg: #FFD54F; /* Yellow toggle thumb */
-    }
+        body.light-mode {
+            --background-color: #2a456c;
+            --text-color: #FFFFFF;
+            --accent-color: #f9c100;
+            --secondary-text-color: #2a456c;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --header-footer-bg: rgba(255, 255, 255, 0.3);
+            --button-bg: #f9c100;
+            --button-text: #2a456c;
+            --button-border: 2px solid #f9c100;
+            --progress-bg: #5A7399;
+            --object-book-bg: #f9c100;
+            --object-star-bg: #FFFFFF;
+            --object-grad-cap-bg: #f9c100;
+            --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #2a456c 50%);
+            --toggle-track-bg: rgba(255, 255, 255, 0.3);
+            --toggle-thumb-bg: #f9c100;
+        }
 
-    /* Rest of your existing CSS remains unchanged */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    body {
-        background: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        position: relative;
-        overflow-x: hidden;
-        transition: background 0.5s ease, color 0.5s ease;
-    }
+        body {
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
 
         /* Overlay for Side Panel */
         .overlay {
@@ -547,18 +546,22 @@
             transform: scale(1.1);
         }
 
-        .education-categories {
+        /* Card-Based Sections Styling */
+        .card-section {
             position: relative;
             padding: 2rem;
             text-align: center;
-            background: url('https://via.placeholder.com/1920x600?text=University+Campus') no-repeat center center/cover;
+            background: transparent;
             margin: 1rem;
             border-radius: 10px;
-            overflow: hidden;
             animation: fadeInUp 1s ease;
         }
 
-        .education-categories::before {
+        .card-section.education-categories {
+            background: url('https://via.placeholder.com/1920x600?text=University+Campus') no-repeat center center/cover;
+        }
+
+        .card-section.education-categories::before {
             content: '';
             position: absolute;
             top: 0;
@@ -569,251 +572,123 @@
             z-index: 0;
         }
 
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .card-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             gap: 1rem;
             position: relative;
             z-index: 1;
-        }
-
-        .category-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .category-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .category-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .category-card h3 {
-            color: var(--text-color);
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .category-card p {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .category-card:nth-child(1) { animation: slideUp 1s ease-out; }
-        .category-card:nth-child(2) { animation: slideUp 1s ease-out 0.2s; }
-        .category-card:nth-child(3) { animation: slideUp 1s ease-out 0.4s; }
-        .category-card:nth-child(4) { animation: slideUp 1s ease-out 0.6s; }
-
-        .courses {
-            padding: 2rem;
-            text-align: center;
-            background: transparent;
-            border-radius: 10px;
-            margin: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .courses h2 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            animation: fadeIn 1s ease;
-        }
-
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .course-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .course-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .course-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .course-card:hover .course-icon {
-            transform: scale(1.2) rotate(10deg);
-        }
-
-        .course-card h3 {
-            color: var(--text-color);
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .course-card p {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .course-card:nth-child(1) { animation: slideUp 1s ease-out; }
-        .course-card:nth-child(2) { animation: slideUp 1s ease-out 0.2s; }
-        .course-card:nth-child(3) { animation: slideUp 1s ease-out 0.4s; }
-        .course-card:nth-child(4) { animation: slideUp 1s ease-out 0.6s; }
-
-        .profile {
-            padding: 2rem;
-            text-align: center;
-            background: transparent;
-            border-radius: 10px;
-            margin: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .profile-card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem;
-            max-width: 300px;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 250px;
+            flex: 0 0 250px;
+            box-sizing: border-box;
         }
 
-        .profile-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .profile-card h3 {
-            color: var(--secondary-text-color);
-            font-size: 1.2rem;
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .profile-card p {
-            color: var(--secondary-text-color);
-            font-size: 0.9rem;
-        }
-
-        .avatar {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+        .card-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
             transition: transform 0.3s ease;
         }
 
-        .profile-card:hover .avatar {
+        .card:hover .card-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .card h3 {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            opacity: 0.9;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-content img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-content img {
             transform: scale(1.1);
         }
 
-        .progress-bar {
-            background: var(--progress-bg);
-            height: 10px;
-            border-radius: 5px;
-            margin: 0 ling 0.5rem 0;
-            overflow: hidden;
+        /* Specific Section Adjustments */
+        .vision-mission-card {
+            min-height: 200px;
+            text-align: left;
         }
 
-        .progress {
-            background: var(--accent-color);
-            height: 100%;
-            border-radius: 5px;
-            width: 0;
-            transition: width 1s ease-in-out;
-        }
-
-        .profile-btn {
-            background: transparent;
-            border: var(--button-border);
-            padding: 0.5rem 1rem;
-            color: var(--accent-color);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-        }
-
-        .profile-btn:hover {
-            background: var(--button-bg);
-            color: var(--button-text);
-            transform: scale(1.05);
-        }
-
+        /* About Us */
         .about-us {
             padding: 2rem;
-            margin: 1rem;
+            text-align: center;
             background: transparent;
+            margin: 1rem;
             border-radius: 10px;
             animation: fadeInUp 1s ease;
         }
 
         .about-us-container {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             justify-content: space-between;
-            background: transparent;
-            border-radius: 10px;
-            overflow: hidden;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .about-us-text {
             flex: 1;
+            min-width: 300px;
             background: #1C2526;
             padding: 3rem;
             color: #FFFFFF;
-            min-width: 300px;
         }
 
         .about-us-text h2 {
@@ -834,26 +709,28 @@
         }
 
         .about-us-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
+        /* Vision-Mission-Purpose */
         .vision-mission {
             padding: 2rem;
-            margin: 1rem;
+            text-align: center;
             background: transparent;
+            margin: 1rem;
             border-radius: 10px;
             animation: fadeInUp 1s ease;
         }
 
         .vision-mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .vision-mission-card {
@@ -864,7 +741,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
-            min-height: 200px;
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         body.light-mode .vision-mission-card {
@@ -890,150 +772,115 @@
             line-height: 1.6;
         }
 
-        .vision-mission-card:nth-child(1) { animation: slideUp 1s ease-out; }
-        .vision-mission-card:nth-child(2) { animation: slideUp 1s ease-out 0.2s; }
-        .vision-mission-card:nth-child(3) { animation: slideUp 1s ease-out 0.4s; }
-
-        .founders {
-            padding: 2rem;
-            text-align: center;
-            background: transparent;
-            border-radius: 10px;
-            margin: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .founders h2 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            animation: fadeIn 1s ease;
-        }
-
-        .founder-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .founder-card {
-            background: transparent;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .founder-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 0.5rem;
-        }
-
-        .founder-card h3 {
-            color: #f9c100;
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .founder-card p {
-            color: #f9c100;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
+        /* Contact Us */
         .contact-us {
             padding: 2rem;
             text-align: center;
             background: transparent;
-            border-radius: 10px;
             margin: 1rem;
+            border-radius: 10px;
             animation: fadeInUp 1s ease;
         }
 
-        form {
+        .contact-us form {
+            max-width: 600px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
         }
 
-        label {
-            color: var(--text-color);
-            font-weight: 500;
+        .contact-us label {
+            font-size: 1rem;
+            text-align: left;
         }
 
-        input, textarea {
-            padding: 0.5rem;
+        .contact-us input,
+        .contact-us textarea {
+            padding: 0.75rem;
             border: 1px solid var(--accent-color);
             border-radius: 5px;
             background: var(--card-bg);
             color: var(--secondary-text-color);
-            width: 100%;
+            transition: border-color 0.3s ease;
         }
 
-        textarea {
+        .contact-us input:focus,
+        .contact-us textarea:focus {
+            border-color: var(--button-bg);
+            outline: none;
+        }
+
+        .contact-us textarea {
+            height: 150px;
             resize: vertical;
-            min-height: 100px;
         }
 
-        button[type="submit"] {
+        .btn-primary {
             background: var(--button-bg);
-            color: var(--button-text);
             border: none;
+            color: var(--button-text);
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
             transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        button[type="submit"]:hover {
-            transform: scale(1.05);
+        .btn-primary:hover {
+            transform: scale(1.1);
             background: var(--accent-color);
         }
 
+        .btn-secondary {
+            background: transparent;
+            border: var(--button-border);
+            color: var(--accent-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--button-bg);
+            color: var(--button-text);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
         footer {
             background: var(--header-footer-bg);
             color: var(--text-color);
             text-align: center;
             padding: 1rem;
-            animation: fadeIn 1s ease;
-            position: relative;
-            z-index: 1;
-            transition: background 0.5s ease;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
         }
 
         footer ul {
             list-style: none;
             display: flex;
-            justify-content: center;
             gap: 1rem;
-            margin-top: 0.5rem;
             flex-wrap: wrap;
         }
 
-        footer a {
+        footer ul a {
             color: var(--text-color);
             text-decoration: none;
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s ease;
         }
 
-        footer a:hover {
+        footer ul a:hover {
             color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        .footer-social {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
         }
 
         .footer-social a {
@@ -1047,6 +894,7 @@
             transform: scale(1.2);
         }
 
+        /* Floating WhatsApp Button */
         .whatsapp-float {
             position: fixed;
             bottom: 20px;
@@ -1092,85 +940,41 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .btn-primary {
-            background: var(--button-bg);
-            border: none;
-            color: var(--button-text);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.1);
-            background: var(--accent-color);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: var(--button-border);
-            color: var(--accent-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: var(--button-bg);
-            color: var(--button-text);
-            transform: scale(1.05);
-        }
-
-        /* Media Queries */
-        @media (max-width: 1200px) {
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1440px) {
             .hero-slider { height: 550px; }
-            .logo { max-width: 100px; }
-            .nav-links { gap: 1.5rem; }
+            .logo { max-width: 180px; }
+            .nav-links { gap: 1.8rem; }
+            .card { width: 230px; flex: 0 0 230px; }
+            .about-us-text h2 { font-size: 2.2rem; }
+            .about-us-text p { font-size: 0.95rem; }
+            .vision-mission-card h2 { font-size: 1.4rem; }
+            .vision-mission-card p { font-size: 0.95rem; }
         }
 
         @media (max-width: 1024px) {
-            .hero-slider { height: 500px; }
-            .slide-content h1 { font-size: 2.5rem; }
-            .slide-content p { font-size: 1.2rem; }
-            .nav-links { gap: 1rem; }
-            .logo { max-width: 200px; }
-            .courses h2 { font-size: 1.8rem; }
-            .course-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-            .about-us-text h2 { font-size: 2rem; }
-            .about-us-text p { font-size: 0.9rem; }
-            .vision-mission-card h2 { font-size: 1.3rem; }
-            .vision-mission-card p { font-size: 0.9rem; }
-            .founders h2 { font-size: 1.8rem; }
-            .founder-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .hero-slider { height: 450px; }
+            .slide-content h1 { font-size: 2.2rem; }
+            .slide-content p { font-size: 1.1rem; }
+            .nav-links { gap: 1.5rem; }
+            .logo { max-width: 160px; }
+            .card-grid { gap: 0.8rem; }
+            .card { width: 200px; flex: 0 0 200px; height: 280px; }
+            .about-us-container { flex-direction: column; }
+            .about-us-text, .about-us-image { flex: 100%; }
+            .vision-mission-card { min-width: 200px; }
+            .footer ul { gap: 0.8rem; }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 0.5rem 1rem;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .logo {
-                max-width: 150px;
-                margin: 0;
-            }
-
-            .hamburger {
-                display: block;
-                margin-left: 10px;
-                z-index: 11;
-            }
-
-            nav {
-                flex: 1;
-                justify-content: flex-end;
-            }
-
+            .card-grid { flex-direction: column; align-items: center; }
+            .card { width: 90%; flex: 0 0 90%; max-width: 300px; height: auto; margin: 0.5rem 0; }
+            .card-icon { font-size: 2.5rem; }
+            .card h3 { font-size: 1.1rem; }
+            .card p { font-size: 0.8rem; }
+            header { padding: 0.5rem 1rem; }
+            .logo { max-width: 150px; }
+            .hamburger { display: block; }
             .nav-links {
                 display: none;
                 position: fixed;
@@ -1188,31 +992,14 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.2);
                 overflow-y: auto;
             }
-
-            .nav-links.active {
-                display: flex;
-                left: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                padding: 0.5rem 0;
-                display: block;
-                text-align: left;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .header-buttons {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .hero-slider { height: 400px; }
-            .slide-content { padding: 1.5rem; }
-            .slide-content h1 { font-size: 2rem; }
-            .slide-content p { font-size: 1rem; }
-            .slider-nav { bottom: 20px; gap: 1rem; }
+            .nav-links.active { display: flex; left: 0; }
+            .nav-links a { font-size: 1.1rem; padding: 0.5rem 0; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+            .header-buttons { margin-top: 0.5rem; gap: 0.5rem; }
+            .hero-slider { height: 350px; }
+            .slide-content { padding: 1rem; }
+            .slide-content h1 { font-size: 1.8rem; }
+            .slide-content p { font-size: 0.9rem; }
+            .slider-nav { bottom: 15px; gap: 1rem; }
             .slider-nav .prev-slide, .slider-nav .next-slide { width: 40px; height: 40px; }
             .slider-nav .prev-slide i, .slider-nav .next-slide i { font-size: 1rem; }
             .dot { width: 8px; height: 8px; }
@@ -1226,48 +1013,48 @@
             .globe { width: 20px; height: 20px; }
             .whatsapp-float a { width: 50px; height: 50px; }
             .whatsapp-float i { font-size: 1.8rem; }
-            .courses, .profile { padding: 1.5rem; margin: 0.5rem; }
-            .courses h2 { font-size: 1.5rem; }
-            .course-grid { grid-template-columns: 1fr; }
-            .footer ul { flex-direction: column; gap: 0.5rem; }
+            .about-us-text { padding: 2rem; }
+            .vision-mission-card { min-width: 90%; height: auto; }
+            .footer { flex-direction: column; gap: 1rem; }
             .footer-social { gap: 1rem; }
-            .category-grid { grid-template-columns: 1fr; }
-            .category-card, .course-card { width: 90%; margin: 0 auto; height: 250px; }
-            .about-us-container { flex-direction: column; }
-            .vision-mission-grid { grid-template-columns: 1fr; }
-            .founder-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
-            header { padding: 0.5rem; }
+            .hero-slider { height: 250px; }
+            .slide-content h1 { font-size: 1.5rem; }
+            .slide-content p { font-size: 0.8rem; }
             .logo { max-width: 120px; }
             .nav-links a { font-size: 0.9rem; }
             .cta { padding: 0.5rem 1rem; font-size: 0.9rem; }
-            .hero-slider { height: 300px; }
-            .slide-content h1 { font-size: 1.5rem; }
-            .slide-content p { font-size: 0.9rem; }
-            .btn-primary { padding: 0.5rem 1rem; font-size: 0.8rem; }
-            .slider-nav { bottom: 15px; gap: 0.8rem; }
-            .slider-nav .prev-slide, .slider-nav .next-slide { width: 35px; height: 35px; }
-            .whatsapp-float a { width: 45px; height: 45px; }
+            .card { padding: 1rem; }
+            .card-icon { font-size: 2rem; }
+            .card h3 { font-size: 1rem; }
+            .card-content img { width: 80px; height: 80px; }
+            .slider-nav { bottom: 10px; gap: 0.5rem; }
+            .slider-nav .prev-slide, .slider-nav .next-slide { width: 30px; height: 30px; }
+            .slider-nav .prev-slide i, .slider-nav .next-slide i { font-size: 0.9rem; }
+            .whatsapp-float a { width: 40px; height: 40px; }
             .whatsapp-float i { font-size: 1.5rem; }
-            .courses h2 { font-size: 1.3rem; }
-            .category-card, .course-card { height: 200px; }
+            .about-us-text h2 { font-size: 1.5rem; }
+            .about-us-text p { font-size: 0.85rem; }
+            .vision-mission-card h2 { font-size: 1.1rem; }
+            .vision-mission-card p { font-size: 0.85rem; }
+            .contact-us form { padding: 0 0.5rem; }
             .mode-toggle { width: 50px; height: 25px; }
             .mode-toggle .slider { width: 20px; height: 20px; }
         }
 
         @media (max-width: 360px) {
-            .hero-slider { height: 250px; }
+            .hero-slider { height: 200px; }
             .slide-content h1 { font-size: 1.2rem; }
-            .slide-content p { font-size: 0.8rem; }
+            .slide-content p { font-size: 0.7rem; }
             .logo { max-width: 100px; }
             .nav-links a { font-size: 0.8rem; }
             .cta { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
-            .courses h2 { font-size: 1.2rem; }
-            .course-card h3 { font-size: 1.1rem; }
-            .course-card p { font-size: 0.8rem; }
-            .whatsapp-float a { width: 40px; height: 40px; }
+            .card h3 { font-size: 0.9rem; }
+            .card p { font-size: 0.7rem; }
+            .card-content img { width: 60px; height: 60px; }
+            .whatsapp-float a { width: 35px; height: 35px; }
             .whatsapp-float i { font-size: 1.3rem; }
         }
 
@@ -1275,7 +1062,8 @@
             .hero-slider { height: 700px; }
             .logo { max-width: 300px; }
             .nav-links { gap: 2.5rem; }
-            .course-grid, .category-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+            .card { width: 280px; flex: 0 0 280px; }
+            .card-grid { gap: 1.5rem; }
         }
     </style>
 </head>
@@ -1299,16 +1087,16 @@
 
     <!-- Header -->
     <header>
-        <img src="logo.png" alt="Intelliwise Logo" class="logo">
+        <img src="logo.png" alt="IntelliWise Academy Logo" class="logo">
         <nav>
             <div class="hamburger" id="hamburger" aria-label="Toggle Menu">☰</div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#courses">Programs</a></li>
-                <li><a href="#exams">Test Preparation</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#who-we-serve">Who We Serve</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
                 <li><a href="#about-us">About Us</a></li>
                 <li><a href="#contact-us">Contact Us</a></li>
-                <li><a href="#profile">Profile</a></li>
             </ul>
         </nav>
         <div class="header-buttons">
@@ -1320,12 +1108,12 @@
                 <span class="tooltip-text">Toggle Theme</span>
             </label>
             <div class="dropdown">
-                <button class="cta tooltip" id="login-btn">Login
-                    <span class="tooltip-text">Sign in</span>
+                <button class="cta tooltip" id="login-btn">Join Us
+                    <span class="tooltip-text">Join Now</span>
                 </button>
                 <div class="dropdown-content" id="login-dropdown">
-                    <a href="login-explorer.html">Login as Explorer</a>
-                    <a href="login-educator.html">Login as Educator</a>
+                    <a href="#explore-programs">Explore Programs</a>
+                    <a href="#join-community">Join Our Learning Community</a>
                 </div>
             </div>
         </div>
@@ -1334,7 +1122,7 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Slider Section -->
-        <section class="hero-slider">
+        <section id="home" class="hero-slider">
             <div class="slider-container">
                 <div class="slide active">
                     <video class="slide-video" autoplay muted loop>
@@ -1342,9 +1130,9 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="slide-content">
-                        <h1>Insight • Innovate • Impact</h1>
-                        <p>Empower your learning journey with Intelliwise.</p>
-                        <button class="btn-primary">Learn More</button>
+                        <h1>Empowering Lifelong Learners</h1>
+                        <p>Skilling students, educators, professionals, and leaders with industry-aligned, tech-powered education.</p>
+                        <a href="#programs" class="btn-primary">Explore Programs</a>
                     </div>
                 </div>
                 <div class="slide">
@@ -1353,9 +1141,9 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="slide-content">
-                        <h1>Learn • Grow • Succeed</h1>
-                        <p>Comprehensive courses for UPSC, SSC, and CBSE.</p>
-                        <button class="btn-primary">Learn More</button>
+                        <h1>Future-Ready Skills</h1>
+                        <p>Join a transformative journey toward achieving your goals and realizing your fullest potential.</p>
+                        <a href="#join-community" class="btn-primary">Join Our Community</a>
                     </div>
                 </div>
                 <div class="slide">
@@ -1364,9 +1152,9 @@
                         Your browser does not support the video tag.
                     </video>
                     <div class="slide-content">
-                        <h1>Discover • Prepare • Excel</h1>
-                        <p>Master your exams with our expert resources.</p>
-                        <button class="btn-primary">Learn More</button>
+                        <h1>Transform Your Future</h1>
+                        <p>Whether you're a student, professional, or executive, IntelliWise Academy is your gateway to success.</p>
+                        <a href="#enroll-now" class="btn-primary">Enroll Now</a>
                     </div>
                 </div>
             </div>
@@ -1381,54 +1169,92 @@
             </div>
         </section>
 
-        <!-- Course Section -->
-        <section id="courses" class="courses">
-            <h2>Explore Our Programs</h2>
-            <div class="course-grid">
-                <div class="course-card">
-                    <div class="course-content">
-                        <i class="fas fa-user-tie course-icon"></i>
-                        <h3>EXECUTIVE</h3>
-                        <p>Advance your career with executive education</p>
-                        <a href="#executive" class="btn-primary">Learn More</a>
+        <!-- Who We Serve Section -->
+        <section id="who-we-serve" class="card-section education-categories">
+            <h2>Who We Serve – Skill Development Pathways</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <i class="fas fa-user-graduate card-icon"></i>
+                    <h3>For Students</h3>
+                    <p>Hands-on experience in emerging technologies, fostering critical thinking and problem-solving skills.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chalkboard-teacher card-icon"></i>
+                    <h3>For Teachers</h3>
+                    <p>Innovative teaching methodologies to inspire and educate the next generation.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-briefcase card-icon"></i>
+                    <h3>For Professionals</h3>
+                    <p>Advanced certification programs in AI, machine learning, and fintech to stay ahead in your career.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-tie card-icon"></i>
+                    <h3>For Executives</h3>
+                    <p>Leadership, strategy, and digital transformation programs with premier institutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="card-section">
+            <h2>Our Programs</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="The Forum" class="card-image">
+                        <h3>The Forum</h3>
+                        <p>An immersive experience to elevate effectiveness and improve quality of life.</p>
+                        <a href="#learn-more" class="btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-content">
-                        <i class="fas fa-briefcase course-icon"></i>
-                        <h3>JOBS</h3>
-                        <p>Find your dream job with Intelliwise</p>
-                        <a href="jobs.html" class="btn-primary">Learn More</a>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Advanced Programs" class="card-image">
+                        <h3>Advanced Programs</h3>
+                        <p>In-depth courses providing hands-on access to designing an extraordinary life.</p>
+                        <a href="#learn-more" class="btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-content">
-                        <i class="fas fa-graduation-cap course-icon"></i>
-                        <h3>HIGHER EDUCATION</h3>
-                        <p>Discover opportunities for higher education</p>
-                        <a href="highereducation.html" class="btn-primary">Learn More</a>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed4d89c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Leadership Program" class="card-image">
+                        <h3>Self-Expression & Leadership</h3>
+                        <p>Expand leadership capacities and make a meaningful impact.</p>
+                        <a href="#learn-more" class="btn-primary">Learn More</a>
                     </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-content">
-                        <i class="fas fa-school course-icon"></i>
-                        <h3>PROGRAM FOR SCHOOL</h3>
-                        <p>Explore educational program for school students</p>
-                        <a href="k12.html" class="btn-primary">Learn More</a>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Master Class" class="card-image">
+                        <h3>Master Class Series</h3>
+                        <p>Seminars led by senior leaders for dramatic breakthroughs.</p>
+                        <a href="#learn-more" class="btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- User Profile Section -->
-        <section id="profile" class="profile">
-            <div class="profile-card">
-                <img src="profile.png" alt="User" class="avatar">
-                <h3>Welcome, John Doe</h3>
-                <p>Courses Enrolled: 3</p>
-                <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-                <p>Exams Taken: 5 (Avg. 85%)</p>
-                <button class="profile-btn">View Profile</button>
+        <!-- Why Choose Us Section -->
+        <section id="why-choose" class="card-section">
+            <h2>Why Choose IntelliWise Academy?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Industry-Aligned Courses</h3>
+                    <p>Programs designed with inputs from industry experts.</p>
+                </div>
+                <div class="card">
+                    <h3>Experienced Faculty</h3>
+                    <p>Learn from seasoned professionals and academicians.</p>
+                </div>
+                <div class="card">
+                    <h3>Flexible Learning</h3>
+                    <p>Online and offline modules to suit your schedule.</p>
+                </div>
+                <div class="card">
+                    <h3>Career Support</h3>
+                    <p>Guidance, mentorship, and networking opportunities.</p>
+                </div>
             </div>
         </section>
 
@@ -1436,51 +1262,29 @@
         <section id="about-us" class="about-us">
             <div class="about-us-container">
                 <div class="about-us-text">
-                    <h2>Who We Are</h2>
-                    <p>With a deep understanding of the challenges that our clients face, we offer tailored solutions to enable them to navigate challenges, seize opportunities, unlock their potential, grow sustainably, innovate continuously, and achieve lasting success.</p>
+                    <h2>About IntelliWise Academy</h2>
+                    <p>IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life—students, professionals, educators, and executives. We bridge the gap between theoretical knowledge and practical application through curated programs that foster personal and professional development. Rooted in Intellidea’s vision of human-centric innovation, we serve as a growth partner for learners at every stage of their journey.</p>
                 </div>
                 <div class="about-us-image">
-                    <img src="Team photo_for Web.png" alt="About Us Image">
+                    <img src="Team photo_for Web.png" alt="IntelliWise Team">
                 </div>
             </div>
         </section>
 
-        <!-- Vision-Mission Section -->
+        <!-- Vision-Mission-Purpose Section -->
         <section id="vision-mission" class="vision-mission">
             <div class="vision-mission-grid">
                 <div class="vision-mission-card">
-                    <h2>Our Vision</h2>
-                    <p>Develop an ecosystem enabling innovative solutions for business growth impact.</p>
+                    <h2>Vision</h2>
+                    <p>To be a global catalyst for accessible, adaptive, and purposeful lifelong learning.</p>
                 </div>
                 <div class="vision-mission-card">
-                    <h2>Our Mission</h2>
-                    <p>Create value by addressing complex challenges for sustainable growth.</p>
+                    <h2>Mission</h2>
+                    <p>To empower learners of all backgrounds through transformative, accessible, and outcome-driven education that builds future-ready competencies.</p>
                 </div>
                 <div class="vision-mission-card">
-                    <h2>Our Purpose</h2>
-                    <p>Optimise potential for progress through capacity building.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Founders Section -->
-        <section id="founders" class="founders">
-            <h2>Our Founders</h2>
-            <div class="founder-grid">
-                <div class="founder-card">
-                    <img src="rajnikant.png" alt="Founder 1">
-                    <h3>Rajnikant Patel</h3>
-                    <p>Chairman</p>
-                </div>
-                <div class="founder-card">
-                    <img src="viresh.png" alt="Founder 2">
-                    <h3>Viresh Patel</h3>
-                    <p>CEO & Founder</p>
-                </div>
-                <div class="founder-card">
-                    <img src="jyoti.png" alt="Founder 3">
-                    <h3>Jyoti Patel</h3>
-                    <p>Director</p>
+                    <h2>Purpose</h2>
+                    <p>To nurture capability and confidence across the learner’s lifecycle—from classroom to boardroom—so individuals can thrive in a fast-changing world.</p>
                 </div>
             </div>
         </section>
@@ -1503,10 +1307,10 @@
 
         <!-- Footer -->
         <footer>
-            <p>Intelliwise © 2025</p>
+            <p>IntelliWise Academy © 2025</p>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#contact-us">Contact</a></li>
                 <li><a href="#">Privacy Policy</a></li>
             </ul>
             <div class="footer-social">
@@ -1634,17 +1438,13 @@
             });
 
             // Scroll Animation
-            const faders = document.querySelectorAll('.hero-slider, .courses, .profile, .about-us, .vision-mission, .founders, .contact-us');
+            const faders = document.querySelectorAll('.hero-slider, .card-section, .about-us, .vision-mission, .contact-us');
             const appearOptions = { threshold: 0.2 };
 
             const appearOnScroll = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('fade-in');
-                        if (entry.target.classList.contains('profile-card')) {
-                            const progress = entry.target.querySelector('.progress');
-                            progress.style.width = '60%';
-                        }
                         observer.unobserve(entry.target);
                     }
                 });
