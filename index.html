@@ -12,15 +12,15 @@
     <style>
         :root {
             /* Dark Mode (Default) */
-            --background-color: #1C2526;
-            --text-color: #FFFFFF;
+            --background-color: #FFFFFF;
+            --text-color: #000000;
             --accent-color: #f9c100;
             --secondary-text-color: #1C2526;
             --card-bg: rgba(255, 255, 255, 0.1);
-            --header-footer-bg: rgba(28, 37, 38, 0.3);
-            --button-bg: #f9c100;
-            --button-text: #1C2526;
-            --button-border: 2px solid #f9c100;
+            --header-footer-bg: #2C1C64;
+            --button-bg: #2C1C64;
+            --button-text: #FFFFFF;
+            --button-border: 2px solid #2C1C64;
             --progress-bg: #e0e0e0;
             --object-book-bg: #f9c100;
             --object-star-bg: #FFFFFF;
@@ -31,14 +31,14 @@
         }
 
         body.light-mode {
-            --background-color: #2C1C64;
+            --background-color: #FFFFFF;
             --text-color: #2C1C64;
             --accent-color: #2C1C64;
             --secondary-text-color: #2a456c;
             --card-bg: rgba(255, 255, 255, 0.9);
-            --header-footer-bg: rgba(255, 255, 255, 0.3);
-            --button-bg: #f9c100;
-            --button-text: #2C1C64;
+            --header-footer-bg: #2C1C64;
+            --button-bg: #2C1C64;
+            --button-text: #FFFFFF;
             --button-border: 2px solid #2C1C64;
             --progress-bg: #5A7399;
             --object-book-bg: #f9c100;
@@ -217,7 +217,7 @@
         }
 
         .nav-links a {
-            color: var(--text-color);
+            color: #FFFFFF;
             text-decoration: none;
             font-size: clamp(0.9rem, 2.5vw, 1.5rem);
             transition: color 0.3s ease, transform 0.3s ease;
@@ -225,7 +225,7 @@
 
         .nav-links a:hover,
         .nav-links a:focus {
-            color: var(--accent-color);
+            color: #f9c100;
             transform: translateY(-2px);
         }
 
@@ -233,7 +233,7 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-color);
+            color: #FFFFFF;
             transition: transform 0.3s ease;
         }
 
@@ -248,7 +248,7 @@
         }
 
         .cta {
-            background: var(--button-bg);
+            background: #902BE8;
             border: none;
             padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
             color: var(--button-text);
@@ -261,7 +261,7 @@
         .cta:hover,
         .cta:focus {
             transform: scale(1.05);
-            background: var(--accent-color);
+            background: #f9c100;
         }
 
         .dropdown-content {
@@ -430,7 +430,7 @@
             text-align: center;
             color: var(--text-color);
             padding: clamp(1rem, 3vw, 2rem);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.3); /* Transparent white background */
             border-radius: 10px;
             transform: translateY(20px);
             opacity: 0;
@@ -478,7 +478,7 @@
 
         .slider-nav .prev-slide,
         .slider-nav .next-slide {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(249, 193, 0, 0.3));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(44, 28, 100, 0.3));
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: var(--text-color);
             width: clamp(30px, 4vw, 50px);
@@ -496,7 +496,7 @@
         .slider-nav .next-slide:hover,
         .slider-nav .prev-slide:focus,
         .slider-nav .next-slide:focus {
-            background: linear-gradient(135deg, rgba(249, 193, 0, 0.5), rgba(249, 193, 0, 0.7));
+            background: linear-gradient(135deg, rgba(44, 28, 100, 0.5), rgba(44, 28, 100, 0.7));
             transform: scale(1.1) translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             border-color: var(--accent-color);
@@ -557,7 +557,7 @@
         }
 
         .card-section h2 {
-            color: #cccccc;
+            color: #333333;
             margin-bottom: clamp(1rem, 3vw, 2rem);
             font-size: clamp(1.5rem, 4vw, 2rem);
             position: relative;
@@ -577,12 +577,11 @@
         }
 
         .card {
-            background: rgba(37, 38, 43, 0.7);
+            background: #F5F5F5; /* Off-white color */
             border-radius: 15px;
             padding: clamp(1rem, 2vw, 2rem);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -626,14 +625,14 @@
         }
 
         .card h3 {
-            color: #ffffff;
+            color: #2C1C64; /* Changed from #ffffff */
             font-size: clamp(0.9rem, 2.5vw, 1.25rem);
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
         .card p {
-            color: #dddddd;
+            color: #2C1C64; /* Changed from #dddddd */
             font-size: clamp(0.7rem, 2vw, 0.9rem);
             line-height: 1.6;
             max-width: 100%;
@@ -676,7 +675,7 @@
         }
 
         .text-section h2 {
-            color: #cccccc;
+            color: #333333;
             margin-bottom: clamp(1rem, 2vw, 1.5rem);
             font-size: clamp(1.5rem, 4vw, 2rem);
         }
@@ -719,21 +718,21 @@
         .about-us-text {
             flex: 1 1 100%;
             min-width: 0;
-            background: #1C2526;
+            background: #F5F5F5;
             padding: clamp(2rem, 4vw, 3rem);
-            color: #FFFFFF;
+            color: #2C1C64;
         }
 
         .about-us-text h2 {
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             margin-bottom: 1rem;
-            color: #FFFFFF;
+            color: #2C1C64;
         }
 
         .about-us-text p {
             font-size: clamp(0.85rem, 2vw, 1rem);
             line-height: 1.8;
-            color: #FFFFFF;
+            color: #2C1C64;
         }
 
         .about-us-image {
@@ -807,7 +806,7 @@
         .btn-primary:hover,
         .btn-primary:focus {
             transform: scale(1.1);
-            background: var(--accent-color);
+            background: #f9c100;
         }
 
         .btn-secondary {
@@ -830,7 +829,7 @@
         /* Footer */
         footer {
             background: var(--header-footer-bg);
-            color: var(--text-color);
+            color: #FFFFFF;
             text-align: center;
             padding: clamp(0.5rem, 2vw, 1rem);
             margin-top: 2rem;
@@ -853,14 +852,14 @@
         }
 
         footer ul a {
-            color: var(--text-color);
+            color: #FFFFFF;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         footer ul a:hover,
         footer ul a:focus {
-            color: var(--accent-color);
+            color: #f9c100;
         }
 
         .footer-social a {
@@ -1009,8 +1008,7 @@
                 </span>
             </label>
             <div class="dropdown">
-                <button class="cta tooltip" id="login-btn">Join Now
-                </button>
+                <button class="cta tooltip" id="login-btn">Join Now</button>
                 <div class="dropdown-content" id="login-dropdown">
                     <a href="#explore-programs">Explore Programs</a>
                     <a href="#join-community">Join Our Learning Community</a>
@@ -1129,7 +1127,7 @@
             <div class="card-grid">
                 <div class="card">
                     <div class="card-content">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="The Forum" class="card-image">
+                        <img src="https://images.pexels.com/photos/8344905/pexels-photo-8344905.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Forum" class="card-image">
                         <h3>The Forum</h3>
                         <p>An immersive experience to elevate effectiveness and improve quality of life.</p>
                         <a href="#learn-more" class="btn-primary">Learn More</a>
@@ -1137,7 +1135,7 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <img src="https://images.unsplash.com/photo-1579202673506-ca3ce28943ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Advanced Programs" class="card-image">
+                        <img src="https://images.pexels.com/photos/8294683/pexels-photo-8294683.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Advanced Programs" class="card-image">
                         <h3>Advanced Programs</h3>
                         <p>In-depth courses providing hands-on access to designing an extraordinary life.</p>
                         <a href="#learn-more" class="btn-primary">Learn More</a>
@@ -1153,7 +1151,7 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Master Class" class="card-image">
+                        <img src="https://images.pexels.com/photos/6713857/pexels-photo-6713857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Master Class" class="card-image">
                         <h3>Master Class Series</h3>
                         <p>Seminars led by senior leaders for dramatic breakthroughs.</p>
                         <a href="#learn-more" class="btn-primary">Learn More</a>
@@ -1175,6 +1173,19 @@
             <p>Guidance, mentorship, and networking opportunities.</p>
         </section>
 
+        <!-- About IntelliWise Academy Card Section -->
+        <section id="about-intelliwise-academy" class="card-section">
+            <h2>About IntelliWise Academy</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>About IntelliWise Academy</h3>
+                        <p>IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life—students, professionals, educators, and executives. We bridge the gap between theoretical knowledge and practical application through curated programs that foster personal and professional development. Rooted in Intellidea's vision of human-centric innovation, we serve as a growth partner for learners at every stage of their journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Us Section -->
         <section id="about-us" class="about-us">
             <div class="about-us-container">
@@ -1190,7 +1201,6 @@
 
         <!-- Vision-Mission-Purpose Section -->
         <section id="vision-mission" class="text-section">
-            <h2>Vision, Mission, and Purpose</h2>
             <h3>Vision</h3>
             <p>To be a global catalyst for accessible, adaptive, and purposeful lifelong learning.</p>
             <h3>Mission</h3>
