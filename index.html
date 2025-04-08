@@ -557,7 +557,7 @@
         }
 
         .card-section h2 {
-            color: #333333;
+            color: #2C1C64;
             margin-bottom: clamp(1rem, 3vw, 2rem);
             font-size: clamp(1.5rem, 4vw, 2rem);
             position: relative;
@@ -643,21 +643,30 @@
             text-overflow: ellipsis;
         }
 
-        .who-we-serve-card p {
-            overflow: visible;
-            text-overflow: unset;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 0.5rem;
-            margin-top: 0;
-            text-align: center;
-        }
+        .who-we-serve-card {
+    pointer-events: none; /* Disables interaction */
+}
+
+.who-we-serve-card:hover,
+.who-we-serve-card:focus-within {
+    transform: none; /* Removes hover lift effect */
+    box-shadow: none; /* Removes hover shadow effect */
+}
+
+.who-we-serve-card .card-icon {
+    transition: none; /* Disables icon animation on hover */
+}
+
+.who-we-serve-card .card-content {
+    gap: 0.5rem; /* Adjusts spacing between image, heading, and paragraph */
+}
 
         .card-image {
             max-width: 100%;
             height: auto;
             object-fit: cover;
+            margin-bottom: 1rem; /* Adds space between image and text */
+    border-radius: 10px;
         }
 
         /* Text-Based Sections Styling */
@@ -675,7 +684,7 @@
         }
 
         .text-section h2 {
-            color: #333333;
+            color: #2C1C64;
             margin-bottom: clamp(1rem, 2vw, 1.5rem);
             font-size: clamp(1.5rem, 4vw, 2rem);
         }
@@ -988,7 +997,7 @@
 
     <!-- Header -->
     <header>
-        <img src="logo.png" alt="IntelliWise Academy Logo" class="logo">
+       <a href="index.html"><img src="logo.png" alt="IntelliWise Academy Logo" class="logo"></a>
         <nav>
             <div class="hamburger" id="hamburger" aria-label="Toggle Menu">☰</div>
             <ul class="nav-links" id="nav-links">
@@ -1084,43 +1093,42 @@
             <div class="card-grid">
                 <div class="card who-we-serve-card">
                     <div class="icon-container">
-                        <i class="fas fa-user-graduate card-icon"></i>
                     </div>
                     <div class="card-content">
-                        <h3>For Students</h3>
-                        <p>Hands-on experience in emerging technologies, fostering critical thinking and problem-solving skills.</p>
+                        <img src="https://images.pexels.com/photos/7433822/pexels-photo-7433822.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Executive Training" class="card-image">
+                        <h3>For Executives</h3>
+                        <p>Leadership, strategy, and digital transformation programs with premier institutions.</p>
                     </div>
                 </div>
                 <div class="card who-we-serve-card">
                     <div class="icon-container">
-                        <i class="fas fa-chalkboard-teacher card-icon"></i>
                     </div>
                     <div class="card-content">
-                        <h3>For Teachers</h3>
-                        <p>Innovative teaching methodologies to inspire and educate the next generation.</p>
-                    </div>
-                </div>
-                <div class="card who-we-serve-card">
-                    <div class="icon-container">
-                        <i class="fas fa-briefcase card-icon"></i>
-                    </div>
-                    <div class="card-content">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Professional Development" class="card-image">
                         <h3>For Professionals</h3>
                         <p>Advanced certification programs in AI, machine learning, and fintech to stay ahead in your career.</p>
                     </div>
                 </div>
                 <div class="card who-we-serve-card">
                     <div class="icon-container">
-                        <i class="fas fa-user-tie card-icon"></i>
                     </div>
                     <div class="card-content">
-                        <h3>For Executives</h3>
-                        <p>Leadership, strategy, and digital transformation programs with premier institutions.</p>
+                        <img src="https://images.pexels.com/photos/5427868/pexels-photo-5427868.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Teacher Training" class="card-image">
+                        <h3>For Teachers</h3>
+                        <p>Innovative teaching methodologies to inspire and educate the next generation.</p>
+                    </div>
+                </div>
+                <div class="card who-we-serve-card">
+                    <div class="icon-container">
+                    </div>
+                    <div class="card-content">
+                        <img src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Student Learning" class="card-image">
+                        <h3>For Students</h3>
+                        <p>Hands-on experience in emerging technologies, fostering critical thinking and problem-solving skills.</p>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Programs Section -->
         <section id="programs" class="card-section">
             <h2>Our Programs</h2>
@@ -1171,19 +1179,6 @@
             <p>Online and offline modules to suit your schedule.</p>
             <h3>Career Support</h3>
             <p>Guidance, mentorship, and networking opportunities.</p>
-        </section>
-
-        <!-- About IntelliWise Academy Card Section -->
-        <section id="about-intelliwise-academy" class="card-section">
-            <h2>About IntelliWise Academy</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-content">
-                        <h3>About IntelliWise Academy</h3>
-                        <p>IntelliWise Academy is a transformative learning ecosystem committed to empowering individuals from all walks of life—students, professionals, educators, and executives. We bridge the gap between theoretical knowledge and practical application through curated programs that foster personal and professional development. Rooted in Intellidea's vision of human-centric innovation, we serve as a growth partner for learners at every stage of their journey.</p>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- About Us Section -->
