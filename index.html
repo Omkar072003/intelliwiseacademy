@@ -27,8 +27,8 @@
             --object-grad-cap-bg: #1C2526;
             --object-globe-bg: radial-gradient(circle at 30% 30%, #FFFFFF 10%, #1C2526 50%);
             --toggle-track-bg: rgba(255, 255, 255, 0.2);
-            --toggle-thumb-bg: #f9c100; */
-        /* } */
+            --toggle-thumb-bg: #f9c100;
+        } */ */
 
         body.light-mode {
             --background-color: #FFFFFF;
@@ -178,18 +178,18 @@
         /* Header */
         header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--header-footer-bg);
-            padding: 1rem clamp(1rem, 3vw, 2rem);
-            width: 100%;
-            z-index: 10;
-            animation: slideIn 0.5s ease-out;
-            transition: background 0.5s ease;
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(5px);
-            flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C1C64; /* Solid color */
+    padding: 1rem clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    z-index: 10;
+    animation: slideIn 0.5s ease-out;
+    transition: background 0.5s ease;
+    position: sticky;
+    top: 0;
+    flex-wrap: wrap;
+    opacity: 1; /* Force solid render */
         }
 
         @keyframes slideIn {
@@ -930,20 +930,20 @@
             .hamburger { display: block; }
             .nav-links {
                 display: none;
-                position: fixed;
-                top: 0;
-                left: -70%;
-                width: 70%;
-                height: 100vh;
-                background: var(--header-footer-bg);
-                flex-direction: column;
-                gap: 1rem;
-                padding: 4rem 1rem 1rem;
-                transition: left 0.3s ease;
-                z-index: 10;
-                backdrop-filter: blur(5px);
-                border-right: 1px solid rgba(255, 255, 255, 0.2);
-                overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: -70%;
+        width: 70%;
+        height: 100vh;
+        background-color: #2C1C64; /* Solid color */
+        flex-direction: column;
+        gap: 1rem;
+        padding: 4rem 1rem 1rem;
+        transition: left 0.3s ease;
+        z-index: 10;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        overflow-y: auto;
+        opacity: 1; /* Force solid render */
             }
             .nav-links.active { display: flex; left: 0; }
             .nav-links a { font-size: 1.1rem; padding: 0.5rem 0; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
