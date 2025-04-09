@@ -428,7 +428,7 @@
 
         .slide-content {
             text-align: center;
-            color: var(--text-color);
+            color: #2C1C64;
             padding: clamp(1rem, 3vw, 2rem);
             background: rgba(255, 255, 255, 0.3); /* Transparent white background */
             border-radius: 10px;
@@ -444,7 +444,7 @@
 
         .slide-content h1 {
             font-size: clamp(1.2rem, 5vw, 3rem);
-            color: var(--accent-color);
+            color: #2C1C64;
             animation: fadeInDown 1.5s ease;
         }
 
@@ -690,7 +690,7 @@
         }
 
         .text-section h3 {
-            color: var(--text-color);
+            color: #2C1C64;
             font-size: clamp(1.1rem, 3vw, 1.5rem);
             font-weight: 600;
             text-transform: uppercase;
@@ -698,7 +698,7 @@
         }
 
         .text-section p {
-            color: var(--text-color);
+            color: #2C1C64;
             font-size: clamp(0.85rem, 2vw, 1rem);
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -842,14 +842,16 @@
     color: #FFFFFF;
     text-align: center;
     padding: clamp(0.5rem, 2vw, 1rem);
-    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: clamp(0.5rem, 2vw, 1rem);
-    z-index: 5;
-    position: relative;
+    z-index: 10; /* Increased to ensure it’s above all content */
+    position: fixed; /* Changed from relative to fixed */
+    bottom: 0; /* Stick to bottom */
+    left: 0; /* Align to left edge */
+    width: 100%; /* Full viewport width */
     opacity: 1;
         }
 
