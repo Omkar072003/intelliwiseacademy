@@ -782,12 +782,13 @@
         .contact-us input,
         .contact-us textarea {
             padding: clamp(0.5rem, 1.5vw, 0.75rem);
-            border: 1px solid var(--accent-color);
-            border-radius: 5px;
-            background: var(--card-bg);
-            color: var(--secondary-text-color);
-            transition: border-color 0.3s ease;
-            width: 100%;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: #F5F5F5; /* Solid off-white for consistency */
+    color: var(--secondary-text-color);
+    transition: border-color 0.3s ease;
+    width: 100%;
+    opacity: 1;
         }
 
         .contact-us input:focus,
@@ -802,9 +803,9 @@
         }
 
         .btn-primary {
-            background: var(--button-bg);
+            background: #2C1C64;
             border: none;
-            color: var(--button-text);
+            color: #FFFFFF;
             padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
             border-radius: 5px;
             cursor: pointer;
@@ -837,16 +838,19 @@
 
         /* Footer */
         footer {
-            background: var(--header-footer-bg);
-            color: #FFFFFF;
-            text-align: center;
-            padding: clamp(0.5rem, 2vw, 1rem);
-            margin-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: clamp(0.5rem, 2vw, 1rem);
+            background-color: #2C1C64;
+    color: #FFFFFF;
+    text-align: center;
+    padding: clamp(0.5rem, 2vw, 1rem);
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    z-index: 5;
+    position: relative;
+    opacity: 1;
         }
 
         footer p {
@@ -953,7 +957,10 @@
                 min-width: calc(50% - clamp(0.8rem, 2vw, 1.5rem)); 
             }
             .about-us-container { flex-direction: column; }
-            .footer { flex-direction: column; gap: 1rem; }
+            .footer { flex-direction: column;
+        gap: 1rem;
+        background-color: #2C1C64;
+        opacity: 1; }
         }
 
         @media (max-width: 480px) {
