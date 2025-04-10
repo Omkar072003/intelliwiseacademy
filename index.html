@@ -18,9 +18,10 @@
             --secondary-text-color: #2a456c;
             --card-bg: rgba(255, 255, 255, 0.9);
             --header-footer-bg: #2C1C64;
-            --button-bg: #2C1C64;
-            --button-text: #FFFFFF;
-            --button-border: 2px solid #2C1C64;
+            --button-bg: #f9c100;
+            --button-hover-bg: #f9c100;
+            --button-text: #2a456c;
+            --button-border: 2px solid #902BE8;
             --progress-bg: #5A7399;
             --object-book-bg: #f9c100;
             --object-star-bg: #FFFFFF;
@@ -69,6 +70,70 @@
             opacity: 1;
             visibility: visible;
             transition: opacity 0.3s ease, visibility 0s;
+        }
+
+        /* Cookies Popup */
+        .cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .cookie-popup p {
+            font-size: 14px;
+            color: #2C1C64;
+        }
+
+        .cookie-popup .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-popup .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cookie-popup .accept-btn {
+            background: #902BE8;
+            color: #FFFFFF;
+        }
+
+        .cookie-popup .accept-btn:hover {
+            background: #f9c100;
+            color: #2a456c;
+        }
+
+        .cookie-popup .decline-btn {
+            background: #FFFFFF;
+            color: #902BE8;
+            border: 1px solid #902BE8;
+        }
+
+        .cookie-popup .decline-btn:hover {
+            background: #f9c100;
+            color: #2a456c;
+            border-color: #f9c100;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .background-objects {
@@ -232,7 +297,7 @@
         }
 
         .cta {
-            background: #902BE8;
+            background: #f9c100;
             border: none;
             padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
             color: var(--button-text);
@@ -245,7 +310,25 @@
         .cta:hover,
         .cta:focus {
             transform: scale(1.05);
-            background: #f9c100;
+            background: #902BE8;
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--button-bg);
+            border: none;
+            color: var(--button-text);
+            padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: scale(1.1);
+            background: var(--button-hover-bg);
         }
 
         .dropdown-content {
@@ -311,12 +394,12 @@
             height: 100%;
             display: flex;
             transition: transform 0.5s ease-in-out;
-            will-change: transform; /* Optimize performance */
+            will-change: transform;
         }
 
         .slide {
             position: relative;
-            flex: 0 0 100%; /* Each slide takes full width */
+            flex: 0 0 100%;
             height: 100%;
             background-size: cover;
             background-position: center;
@@ -332,7 +415,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 0; /* Behind content */
+            z-index: 0;
         }
 
         .slide-content {
@@ -340,9 +423,9 @@
             text-align: center;
             color: #2C1C64;
             padding: clamp(1rem, 3vw, 2rem);
-            background: rgba(255, 255, 255, 0.7); /* Increased opacity for visibility */
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 10px;
-            z-index: 1; /* Above video */
+            z-index: 1;
             transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
@@ -376,7 +459,7 @@
             display: flex;
             align-items: center;
             gap: clamp(0.5rem, 2vw, 1.5rem);
-            z-index: 2; /* Above slides */
+            z-index: 2;
         }
 
         .slider-nav .prev-slide,
@@ -607,6 +690,52 @@
             margin-bottom: 1rem;
         }
 
+        .text-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #2C1C64;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            line-height: 1.6;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .text-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Vision-Mission-Purpose Container */
+        .vision-mission-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto clamp(2rem, 5vw, 4rem) auto;
+            padding: clamp(1rem, 3vw, 2rem);
+            gap: clamp(1rem, 3vw, 2rem);
+            flex-wrap: wrap;
+        }
+
+        .vision-mission-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .vision-mission-right {
+            flex: 1;
+            min-width: 0;
+        }
+
+        @media (max-width: 768px) {
+            .vision-mission-container {
+                flex-direction: column;
+            }
+            .vision-mission-left,
+            .vision-mission-right {
+                width: 100%;
+            }
+        }
+
         /* About Us */
         .about-us {
             padding: clamp(1rem, 3vw, 2rem);
@@ -668,6 +797,12 @@
             animation: fadeInUp 1s ease;
         }
 
+        .contact-us h2 {
+            color: #2C1C64;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
         .contact-us form {
             max-width: clamp(300px, 80%, 600px);
             margin: 0 auto;
@@ -677,9 +812,24 @@
             padding: 0 clamp(0.5rem, 2vw, 1rem);
         }
 
+        .contact-us .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-us .form-row input {
+            flex: 1;
+        }
+
+        .contact-us .form-row:nth-child(2) {
+            justify-content: space-between;
+        }
+
         .contact-us label {
             font-size: clamp(0.9rem, 2vw, 1rem);
             text-align: left;
+            display: none;
         }
 
         .contact-us input,
@@ -705,23 +855,6 @@
             resize: vertical;
         }
 
-        .btn-primary {
-            background: #2C1C64;
-            border: none;
-            color: #FFFFFF;
-            padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .btn-primary:hover,
-        .btn-primary:focus {
-            transform: scale(1.1);
-            background: #f9c100;
-        }
-
         .btn-secondary {
             background: transparent;
             border: var(--button-border);
@@ -739,57 +872,91 @@
             transform: scale(1.05);
         }
 
+        .contact-info {
+            margin-top: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info a {
+            color: #f9c100;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             background-color: #2C1C64;
             color: #FFFFFF;
             text-align: center;
-            padding: clamp(0.5rem, 2vw, 1rem);
+            padding: clamp(1rem, 2vw, 2rem);
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: clamp(0.5rem, 2vw, 1rem);
+            gap: clamp(1rem, 2vw, 2rem);
             z-index: 10;
-            position: sticky;
-            bottom: 0;
-            left: 0;
+            position: static;
             width: 100%;
             opacity: 1;
         }
 
-        footer p {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        .footer-content {
+            flex: 1;
+            text-align: left;
         }
 
-        footer ul {
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .contact-details li {
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details a {
+            color: #f9c100;
+            text-decoration: none;
+        }
+
+        .contact-details a:hover,
+        .contact-details a:focus {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            flex: 100%;
+            text-align: center;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
             list-style: none;
             display: flex;
             gap: clamp(0.5rem, 2vw, 1rem);
             flex-wrap: wrap;
+            justify-content: center;
         }
 
-        footer ul a {
+        .footer-links a {
             color: #FFFFFF;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        footer ul a:hover,
-        footer ul a:focus {
+        .footer-links a:hover,
+        .footer-links a:focus {
             color: #f9c100;
-        }
-
-        .footer-social a {
-            color: #f9c100;
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .footer-social a:hover,
-        .footer-social a:focus {
-            color: #FFD54F;
-            transform: scale(1.2);
         }
 
         /* Floating WhatsApp Button */
@@ -868,6 +1035,16 @@
                 background-color: #2C1C64;
                 opacity: 1; 
             }
+            .footer-content {
+                text-align: center;
+            }
+            .contact-details {
+                text-align: center;
+            }
+            .contact-us .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -895,6 +1072,15 @@
     <!-- Overlay for Side Panel -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- Cookies Popup -->
+    <div class="cookie-popup" id="cookiePopup">
+        <p>We use cookies on our website to see how you interact with it. By accepting, you agree to our use of such cookies. <a href="#" style="color: #902BE8;">Privacy Policy</a></p>
+        <div class="btn-group">
+            <button class="btn accept-btn" onclick="acceptCookies()">Accept</button>
+            <button class="btn decline-btn" onclick="declineCookies()">Decline</button>
+        </div>
+    </div>
+
     <!-- Background Objects -->
     <div class="background-objects">
         <div class="object book"></div>
@@ -911,7 +1097,7 @@
 
     <!-- Header -->
     <header>
-       <a href="index.html"><img src="logo.png" alt="IntelliWise Academy Logo" class="logo"></a>
+        <a href="index.html"><img src="logo.png" alt="IntelliWise Academy Logo" class="logo"></a>
         <nav>
             <div class="hamburger" id="hamburger" aria-label="Toggle Menu">☰</div>
             <ul class="nav-links" id="nav-links">
@@ -920,7 +1106,7 @@
                 <li><a href="#programs">Programs</a></li>
                 <li><a href="#why-choose">Why Choose Us</a></li>
                 <li><a href="#about-us">About Us</a></li>
-                <li><a href="#contact-us">Contact Us</a></li>
+                <li><a href="#contact-us">Contact</a></li>
             </ul>
         </nav>
         <div class="header-buttons">
@@ -1099,56 +1285,133 @@
             </div>
         </section>
 
-        <!-- Vision-Mission-Purpose Section -->
-        <section id="vision-mission" class="text-section">
-            <h3>Vision</h3>
-            <p>To be a global catalyst for accessible, adaptive, and purposeful lifelong learning.</p>
-            <h3>Mission</h3>
-            <p>To empower learners of all backgrounds through transformative, accessible, and outcome-driven education that builds future-ready competencies.</p>
-            <h3>Purpose</h3>
-            <p>To nurture capability and confidence across the learner’s lifecycle—from classroom to boardroom—so individuals can thrive in a fast-changing world.</p>
+        <!-- Vision, Mission, Purpose, and Unique Value Proposition -->
+        <div class="vision-mission-container">
+            <div class="vision-mission-left">
+                <!-- Vision Section -->
+                <section id="vision" class="text-section">
+                    <h3>Vision</h3>
+                    <p>To be a global catalyst for accessible, adaptive, and purposeful lifelong learning.</p>
+                </section>
+
+                <!-- Mission Section -->
+                <section id="mission" class="text-section">
+                    <h3>Mission</h3>
+                    <p>To empower learners of all backgrounds through transformative, accessible, and outcome-driven education that builds future-ready competencies.</p>
+                </section>
+
+                <!-- Purpose Section -->
+                <section id="purpose" class="text-section">
+                    <h3>Purpose</h3>
+                    <p>To nurture capability and confidence across the learner’s lifecycle—from classroom to boardroom—so individuals can thrive in a fast-changing world.</p>
+                </section>
+            </div>
+            <div class="vision-mission-right">
+                <!-- Unique Value Proposition Section -->
+                <section id="unique-value" class="text-section">
+                    <h3>Unique Value Proposition</h3>
+                    <ul>
+                        <li>Academic Excellence</li>
+                        <li>Industry Relevance</li>
+                        <li>Tech-Powered Delivery</li>
+                        <li>Career Support</li>
+                        <li>Global Access</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Our Founders Section -->
+        <section id="our-founders" class="card-section">
+            <h2>Our Founders</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://static.wixstatic.com/media/12cda0_aa9c9bcb9c3e4264a276be1f8ccbe717~mv2.png/v1/fill/w_551,h_711,fp_0.52_0.26,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/rajnikant.png" alt="Founder 1" class="card-image">
+                        <h3>Rajnickant Patel</h3>
+                        <h4>Chairman</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://static.wixstatic.com/media/12cda0_cc8bd3ed4f854ab487aa6f5c58ad2ce8~mv2.png/v1/fill/w_551,h_711,fp_0.49_0.26,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/viresh.png" alt="Founder 2" class="card-image">        
+                        <h3>Viresh Patel</h3>
+                        <h4>MD & CEO</h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://static.wixstatic.com/media/12cda0_64bb6055b391441c977075c53c78311c~mv2.png/v1/fill/w_551,h_711,fp_0.51_0.18,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/jyoti_mam_updated.png" alt="Founder 3" class="card-image">
+                        <h3>Jyoti Patel</h3>
+                        <h4>Director</h4>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Our Advisory Board Section -->
+        <section id="advisory-board" class="card-section">
+            <h2>Our Advisory Board</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://static.wixstatic.com/media/12cda0_8b60134502d84a998ba805385733f09f~mv2.png/v1/crop/x_371,y_0,w_1503,h_1939/fill/w_475,h_613,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dr_%20Barman.png" alt="Dr. R. B. Barman" class="card-image">
+                        <h3>Dr. R. B. Barman</h3>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="https://static.wixstatic.com/media/12cda0_9a893b9814024d27814ad6f6c1d6474d~mv2.png/v1/fill/w_475,h_613,fp_0.52_0.35,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/sanjay_ubale.png" alt="Sanjay Ubale" class="card-image">
+                        <h3>Sanjay Ubale</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
         <!-- Contact Us Section -->
         <section id="contact-us" class="contact-us">
-            <h2>Contact Us</h2>
+            <h2>Ready to Take Your Career to the Next Level?</h2>
             <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="mobile_number">Mobile No:</label>
-                <input type="tel" id="mobile_number" name="mobile_number" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
+                <div class="form-row">
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                </div>
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="btn-primary">Submit</button>
             </form>
         </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>IntelliWise Academy © 2025</p>
-            <ul>
-                <li><a href="#about-us">About</a></li>
-                <li><a href="#contact-us">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-            <div class="footer-social">
-                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com/intellidea.iii" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-        </footer>
-
-        <!-- Floating WhatsApp Button -->
-        <div class="whatsapp-float">
-            <a href="https://wa.me/9082378708" target="_blank" aria-label="Chat on WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="IntelliWise Academy Logo" class="logo">
+        <div class="footer-content">
+            <p>Reach out to us or learn more about our services:</p>
+            <ul class="contact-details">
+                <li>Email: <a href="mailto:hello@intellidea.co.in">hello@intellidea.co.in</a></li>
+                <li>Phone: <a href="tel:+919082378708">+91 9082 378 708</a></li>
+                <li>Address: Innov8, Times Square, A Wing, 4th Floor, Marol, Andheri Kurla Road, Andheri East, Mumbai 400059</li>
+            </ul>
+            <p>Enabling and Empowering businesses to have knowledge-based Insight, Innovate, Evolve & Scale.</p>
+        </div>
+        <p class="copyright">Copyright - 2025 | Intellidea Consultancy Services Pvt. Ltd.</p>
+        <ul class="footer-links">
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#cookies-policy">Cookies Policy</a></li>
+            <li><a href="#terms-conditions">Terms & Conditions</a></li>
+        </ul>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/9082378708" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script>
         // Side Panel Toggle
@@ -1260,6 +1523,24 @@
             if (!loginBtn.contains(e.target) && !loginDropdown.contains(e.target)) {
                 loginDropdown.classList.remove('show');
             }
+        });
+
+        // Cookies Popup Functionality
+        const cookiePopup = document.getElementById('cookiePopup');
+
+        function acceptCookies() {
+            cookiePopup.style.display = 'none';
+            // Optionally set a cookie to track acceptance (not implemented here for simplicity)
+        }
+
+        function declineCookies() {
+            cookiePopup.style.display = 'none';
+            // Optionally redirect or log decline action
+        }
+
+        // Show cookie popup on page load
+        window.addEventListener('load', () => {
+            cookiePopup.style.display = 'block';
         });
     </script>
 </body>
